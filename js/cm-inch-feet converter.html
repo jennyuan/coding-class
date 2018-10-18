@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript cm-inch-feet converter</title>
+</head>
+
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width=250 border=0>
+
+<FORM name=cminch method="post">
+        <TBODY>
+        <TR>
+          <TD>
+            <FONT face="Arial Narrow"><INPUT 
+            onblur=cmconvert() value=2.54 name=cm> </FONT><FONT face="Arial Narrow" 
+        size=-1>cm</FONT></TD>
+        </TR>
+        <TR>
+          <TD>
+            <FONT face="Arial Narrow"><INPUT 
+            onblur=feetconvert() value=0 name=feet> </FONT><FONT face=Arial 
+            size=-1>feet</FONT></TD>
+        </TR>
+        <TR>
+          <TD>
+            <FONT face="Arial Narrow"><INPUT 
+            onblur=inchconvert() value=1 name=inch> </FONT><FONT face=Arial 
+        size=-1>inch</FONT></TD>
+        </TR>
+        <TR>
+          <TD width="50%">
+              <p align="center"><input type="button" value="Submit" name="calc"></p>
+          </TD>
+        </TR></TBODY></FORM></TABLE>
+      <p align="left">
+      <FONT face="Arial Narrow" size="2">Note: 1 Inch = 2.54 cm, 1 Feet = 30.48 cm, 1 
+      Feet = 12 Inch</FONT>
+      <BR>
+
+<SCRIPT language=JavaScript>
+
+/*
+cm/inch/feet converter - credit must stay intact for use
+By Ada Shimar ada@chalktv.com
+For this script and more,
+Visit http://javascriptkit.com
+*/
+
+function roundit(which){
+return Math.round(which*100)/100
+}
+
+function cmconvert(){
+with (document.cminch){
+feet.value = roundit(cm.value/30.84);
+inch.value = roundit(cm.value/2.54);
+}
+}
+
+function inchconvert(){
+with (document.cminch){
+cm.value = roundit(inch.value*2.54);
+feet.value=roundit(inch.value/12);
+}
+}
+
+function feetconvert(){
+with (document.cminch){
+cm.value=roundit(feet.value*30.48);
+inch.value=roundit(feet.value*12);
+}
+}
+
+</SCRIPT>
+
+<p align="center">This free script provided by<br />
+<a href="http://javascriptkit.com">JavaScript
+Kit</a></p>
+</body>
+</html>

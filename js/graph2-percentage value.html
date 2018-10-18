@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript graph-percentage value</title>
+</head>
+
+<body>
+What is your favorite news site?
+
+<script language="JavaScript1.2">
+
+//JavaScript Graph-it! (Percentage)- by javascriptkit.com
+//Visit JavaScript Kit (http://javascriptkit.com) for script
+//Credit must stay intact for use
+
+var graphimageP="poll.gif"
+
+//DEFINE GRAPH VALUES [Item name, Percentage value]
+var graphv=new Array()
+graphv[0]=["CNN","28%"]
+graphv[1]=["MSNBC","36%"]
+graphv[2]=["ABC News","11%"]
+graphv[3]=["BBC News","25%"]
+
+//YOU CAN DEFINE MULTIPLE GRAPHS, eg:
+//var graphz=new Array()
+
+
+function graphitP(g,gwidth){
+
+outputP='<table border="0" cellspacing="0" cellpadding="0">'
+for (i=0;i<g.length;i++){
+calwidthP=gwidth*(parseInt(g[i][1])/100)
+outputP+='<tr><td>'+g[i][0]+'&nbsp;</td><td><img src="'+graphimageP+'" width="'+calwidthP+'" height="10"> '+g[i][1]+'</td></tr>'
+}
+outputP+='</table>'
+document.write(outputP)
+}
+
+//CALL GRAPHIT FUNCTION
+//graphitP(NAME OF GRAPH ARRAY, MAXIMUM WIDTH IN PIXELS)
+graphitP(graphv,200)
+</script>
+
+<p align="center">This free script provided by<br />
+<a href="http://www.javascriptkit.com">JavaScript
+Kit</a></p>
+</body>
+</html>

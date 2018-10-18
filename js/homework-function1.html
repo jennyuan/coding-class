@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prompt</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/uxcore.css" rel="stylesheet">
+<link href="../css/customer-comp.css" rel="stylesheet">
+
+<script type='text/javascript'>
+
+function doMultiplication() {
+var n1=Number(prompt ("Enter a first number: "));
+var n2=Number(prompt ("Enter a second number: "));
+var n3=Number(prompt ("Enter a third number: "));
+var n_sum=n1*n2*n3;
+document.getElementById("coolmath").innerHTML = ("The product of 3 numbers is: " + n_sum);
+}
+
+</script>	
+</head>
+
+<body>
+
+
+<p id="aboutMe"><em>I'm learning to build dynamic web pages with JavaScript function.</em></p>
+
+<p id="coolmath">The product of 3 numbers is:</p>
+<button id="domath" onclick = "doMultiplication()" type="button">
+Do Multiplication
+</button>
+<p></p>
+
+</body>
+</html>

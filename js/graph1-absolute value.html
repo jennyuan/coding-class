@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript graph-absolute value</title>
+</head>
+
+<body>
+What is your favorite news site?
+
+<script language="JavaScript1.2">
+
+//JavaScript Graph-it! (Absolute)- by javascriptkit.com
+//Visit JavaScript Kit (http://javascriptkit.com) for script
+//Credit must stay intact for use
+
+var graphimage="poll.gif"
+
+//DEFINE GRAPH VALUES [Item name, absolute value]
+var graphx=new Array()
+graphx[0]=["CNN",60]
+graphx[1]=["MSNBC",75]
+graphx[2]=["ABC News",24]
+graphx[3]=["BBC News",52]
+
+//YOU CAN DEFINE MULTIPLE GRAPHS, eg:
+//var graphy=new Array()
+
+
+function graphit(g,gwidth){
+total=0
+for (i=0;i<g.length;i++)
+total+=parseInt(g[i][1])
+
+output='<table border="0" cellspacing="0" cellpadding="0">'
+for (i=0;i<g.length;i++){
+calpercentage=Math.round(g[i][1]*100/total)
+calwidth=Math.round(gwidth*(calpercentage/100))
+output+='<tr><td>'+g[i][0]+'&nbsp;</td><td><img src="'+graphimage+'" width="'+calwidth+'" height="10"> '+calpercentage+'%</td></tr>'
+}
+output+='</table>'
+document.write(output+'<br />Total participants: <b>'+total+'</b>')
+}
+
+//CALL GRAPHIT FUNCTION
+//graphit(NAME OF GRAPH ARRAY, MAXIMUM WIDTH IN PIXELS)
+graphit(graphx,200)
+</script>
+
+<p align="center">This free script provided by<br />
+<a href="http://www.javascriptkit.com">JavaScript
+Kit</a></p>
+</body>
+</html>

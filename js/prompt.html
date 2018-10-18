@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prompt</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/uxcore.css" rel="stylesheet">
+<link href="../css/customer-comp.css" rel="stylesheet">
+
+<script type='text/javascript'>
+
+var item1;
+var item2;
+var item3;
+
+function newList(){
+item1 = prompt ("Enter a new first thing: ");
+item2 = prompt ("Enter a new second thing: ");
+item3 = prompt ("Enter a new third thing: ");
+updateList(); 
+}
+
+function updateList() {
+document.getElementById("firstThing").innerHTML = item1;
+document.getElementById("secondThing").innerHTML = item2;
+document.getElementById("thirdThing").innerHTML = item3;
+}
+
+function doAddition() {
+var n1=Number(prompt ("Enter a first number: "));
+var n2=Number(prompt ("Enter a second number: "));
+var n3=Number(prompt ("Enter a third number: "));
+var n_sum=n1+n2+n3;
+document.getElementById("mathresult").innerHTML = ("The sum of 3 numbers is: " + n_sum);
+}
+
+</script>	
+</head>
+
+<body>
+
+
+<p id="aboutMe"><em>I'm learning to build dynamic web pages with JavaScript, HTML, and CSS!</em></p>
+<hr>
+
+<H2>Things I Like</h2>
+
+<p>Here are some of the things I like to do:</p>
+
+<ul>
+<li id="firstThing">Write</li>
+<li id="secondThing">Paint</li>
+<li id="thirdThing">Travel</li>
+</ul>
+
+<button id="changeList" onclick = "newList()" type="button">
+Change Your List
+</button>
+<hr>
+<p id="mathresult">The sum of 3 numbers is:</p>
+<button id="domath" onclick = "doAddition()" type="button">
+Do Addition
+</button>
+<p></p>
+
+</body>
+</html>

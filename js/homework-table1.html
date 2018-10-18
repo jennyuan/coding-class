@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Christmas Gift List</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/uxcore.css" rel="stylesheet">
+<link href="../css/customer-comp.css" rel="stylesheet">
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(odd){background-color: lightgrey}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+<!--make the button centered-->
+
+<style>
+button{
+  margin:auto;
+  display:block;
+}
+</style>
+
+<script type='text/javascript'>
+
+function displayLoop() {
+var numofTimes = Number(prompt ("Enter number of Christmas gifts you would want to buy: "));
+var i; //counter
+var text=""; //used to display the table
+var totalgiftcost=0; //hold number of sum of all cost
+var giftname = ""; // gift name
+var giftcost=0; //hold number of one gift cost
+var str_giftcost=""; //hold text string of one gift cost in dollar
+var str_totalgiftcost=""; //hold text string of total gift cost in dollar
+var giftsource=""; //where to buy the gift, url to the gift website
+var giftsourcelink=""; //build clickable link to the gift website
+var giftsourcetext="";
+var giftfor=""; //gift for whom
+
+/*table heading html*/
+
+text+="<tr>";
+text+="<th>Gift Name</th><th>Gift For</th><th>Cost ($) </th><th>Source From</th>";
+text+="</tr>";
+
+/* take each gift iinformation and create a new row and do math of total cost */
+ 
+for (i = 1; i < numofTimes+1; i++) {
+	giftname=prompt ("Enter gift " + i + " name: ");
+    
+   
+	giftfor=prompt("Enter gift " + giftname + " for whom: ");
+	giftsource=prompt("Enter gift " + giftname + " source. For example, enter Amazon link: ");
+    	giftcost=Number(prompt ("Enter " + giftname + " cost: "));
+	str_giftcost=giftcost.toFixed(2); //convert giftcost number to string text of dollar amount
+
+	//build a clickable link to gift source on the web
+	giftsourcetext="Click here";
+	giftsourcelink=giftsourcetext.link(giftsource);
+        giftsourcelink=giftsourcelink.replace(/^<a/, '$& target="_blank"');
+	
+
+	//create a new row to display gift name, for whom, source from and cost	
+
+	text+="<tr>";
+	text+= "<td>" + giftname + "</td>" + "<td>" + giftfor + "</td>" + "<td>" + "$ " + str_giftcost + "</td>" + "<td>" + giftsourcelink + "</td>";
+	text+="</tr>";
+
+	//add each gift cost together to come up with a total number
+
+	totalgiftcost+=giftcost; 
+ 
+	
+}
+
+/*done with creating new rows of each gift
+now create a last row to show total cost*/
+
+str_totalgiftcost=totalgiftcost.toFixed(2); //make the number to be dolllar text
+
+text+="<tr>";
+text+="<td>" + "<b>Total: " + numofTimes + "</b></td>" + "<td></td>" + "<td>" + "<b>$ " + str_totalgiftcost + "</b></td>" + "<td></td>";
+text+="</tr>";
+
+/* finally, display the table*/
+
+document.getElementById("demo").innerHTML = text;
+//document.write(text);
+
+}
+
+</script>
+</head>
+
+<body>
+<h1 style="text-align: center;">My Christmas Gift List</h1>
+<table id="demo"></table>
+<p></p>
+<button onclick = "displayLoop()" type="button">
+Create Christmas Gift List
+</button>
+<p></p>
+
+</body>
+</html>

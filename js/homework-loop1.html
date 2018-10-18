@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loops</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/uxcore.css" rel="stylesheet">
+<link href="../css/customer-comp.css" rel="stylesheet">
+
+<script type='text/javascript'>
+
+function displayLoop() {
+var numofTimes = Number(prompt ("Enter number of Christmas gifts you would want to buy: "));
+var i;
+var text="";
+var totalgiftcost=0;
+var giftname = "";
+var giftcost=0;
+for (i = 1; i < numofTimes+1; i++) {
+	giftname=prompt ("Enter gift " + i + " name: ");
+    	giftcost=Number(prompt ("Enter " + giftname + " cost: "));
+	text += giftname + ": " + giftcost + "<br>";
+	totalgiftcost+=giftcost;
+}
+document.getElementById("demo").innerHTML = text + "<br>" + "Total Cost: " + totalgiftcost;
+
+}
+
+</script>
+</head>
+
+<body>
+<h1>My Christmas Gift List</h1>
+<p id="demo"></p>
+<p></p>
+<button onclick = "displayLoop()" type="button">
+Create Christmas Gift List
+</button>
+<p></p>
+
+</body>
+</html>

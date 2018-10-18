@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<! --http://www.w3schools.com/js/js_htmldom_animate.asp-->
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+<p id="demo"></p>
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="container">
+<div id ="animate"></div>
+</div>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 60); //defines speed of movement
+  function frame() {
+var text = "";
+text += "pos is " + pos + "<br>";
+document.getElementById("demo").innerHTML = text;
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top =  pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
