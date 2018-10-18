@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<p>This example calls a function which composes a sentence:</p>
+
+<p id="demo"></p>
+
+<script>
+function myCoolcar (carname) {
+	var mySentence = ("My cool car is a " + carname + ".");
+	return mySentence;
+}
+
+<!--call function myCoolcar(), passing car name text -->
+document.getElementById("demo").innerHTML = myCoolcar("Corvette"); 
+
+</script>
+
+</body>
+</html>

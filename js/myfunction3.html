@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<p>This example calls a function which updates a list:</p>
+
+
+<script >
+function updateList() {
+document.getElementById("firstThing").innerHTML = prompt ("Enter a new first thing: ");
+document.getElementById("secondThing").innerHTML = prompt ("Enter a new second thing: ");
+document.getElementById("thirdThing").innerHTML = prompt ("Enter a new third thing: ");
+}
+</script>	
+
+
+<H2>Things I Like</h2>
+
+<p>Here are some of the things I like to do:</p>
+
+<ul>
+<li id="firstThing">Write</li>
+<li id="secondThing">Paint</li>
+<li id="thirdThing">Travel</li>
+</ul>
+
+<button id="changeList" onclick = "updateList()" type="button">
+Change Your List
+</button>
+
+</body>
+</html>

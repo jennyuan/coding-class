@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conditional Statements</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/uxcore.css" rel="stylesheet">
+<link href="../css/customer-comp.css" rel="stylesheet">
+
+<script type='text/javascript'>
+
+function displayLoop() {
+
+var n=20;
+var text="";
+var textA="";
+var textB="";
+var textC="";
+
+//text=repeatString(3,'x');
+
+for (i = 1; i <= n; i++) {
+    textA=repeatString((n-i)*2,"&nbsp;");
+
+    textB=repeatString(i*2,'*');
+
+    text+=textA + textB + "<br>";
+}
+
+textC=repeatString(36,"&nbsp;") + "****" + "<br>" + repeatString(38, "&nbsp;") + "**" + "<br>" + repeatString(38, "&nbsp;") + "**";
+text=text + textC;
+
+
+document.getElementById("demo").innerHTML = text;
+}
+
+function repeatString(n, string) {
+  var repeat = [];
+  repeat.length = n + 1;
+  return repeat.join(string);
+}
+
+
+</script>
+</head>
+
+<body>
+<h1>I'm learning JavaScript for loop.</h1>
+<p id="demo"></p>
+<p></p>
+<button onclick = "displayLoop()" type="button">
+Create a pattern
+</button>
+<p></p>
+
+</body>
+</html>

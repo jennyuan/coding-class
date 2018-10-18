@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conditional Statements</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/uxcore.css" rel="stylesheet">
+<link href="../css/customer-comp.css" rel="stylesheet">
+
+<script type='text/javascript'>
+
+function displayLoop() {
+
+var i;
+var n=0;
+var text = "";
+for (i = 0; i < 5; i++) {
+	n=n+1;
+    text += "i is " + i + " n is " + n + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+}
+
+</script>
+</head>
+
+<body>
+<h1>I'm learning JavaScript for loop.</h1>
+<p id="demo"></p>
+<p></p>
+<button onclick = "displayLoop()" type="button">
+How many times does the for loop run?
+</button>
+<p></p>
+
+</body>
+</html>
